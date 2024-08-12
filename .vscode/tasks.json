@@ -6,9 +6,24 @@
 			"program": "${command:virtual-hardware.getBinaryFile}",
 			"model": "${command:virtual-hardware.getModel}",
 			"config": "${workspaceFolder}/fvp-config.txt",
-			"args": ["--simlimit", "20"],
+			"args": [
+				"--simlimit",
+				"20"
+			],
 			"problemMatcher": [],
 			"label": "virtual-hardware.run: Run Program"
+		},
+		{
+			"type": "arm-debugger.flash",
+			"serialNumber": "${command:device-manager.getSerialNumber}",
+			"program": "${command:arm-debugger.getApplicationFile}",
+			"cmsisPack": "${command:device-manager.getDevicePack}",
+			"problemMatcher": [],
+			"label": "arm-debugger.flash: Flash Device",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }
